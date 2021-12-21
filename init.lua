@@ -1,0 +1,10 @@
+require('chunks.functions')
+require('chunks.basics')
+require('chunks.plugins')
+
+require('config.theme')
+require('config.chadtree')
+require('config.lualine')
+require('config.telescope')
+require('config.term')
+require('config.lsp')
