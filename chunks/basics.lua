@@ -5,6 +5,7 @@ vim.o.hidden = true -- Allow modified buffers in background
 vim.o.inccommand = 'split' -- Show replacements before applieng
 -- vim.o.mouse=a
 vim.o.number = true
+vim.o.signcolumn = 'yes'
 vim.o.relativenumber = true
 vim.o.splitbelow = true
 vim.o.splitright = true
