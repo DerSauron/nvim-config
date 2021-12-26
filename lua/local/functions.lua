@@ -12,6 +12,10 @@ function _G.imap(lhs, rhs, opts)
     map('i', lhs, rhs, opts)
 end
 
+function _G.vmap(lhs, rhs, opts)
+    map('v', lhs, rhs, opts)
+end
+
 function _G.tmap(lhs, rhs, opts)
     map('t', lhs, rhs, opts)
 end
