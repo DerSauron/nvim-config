@@ -5,6 +5,12 @@ if not ok then
 end
 
 telescope.setup({
+    defaults = {
+        prompt_prefix = " ",
+        selection_caret = " ",
+        path_display = { "smart" },
+    },
+
     extensions = {
         fzy_native = {
             override_generic_sorter = false,
