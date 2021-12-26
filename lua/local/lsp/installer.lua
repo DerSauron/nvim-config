@@ -1,4 +1,8 @@
-local lsp_installer = require("nvim-lsp-installer")
+local ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not ok then
+    print "Plugin lsp-installer not found"
+    return
+end
 
 lsp_installer.on_server_ready(function(server)
     local handlers = require("local.lsp.handlers")
