@@ -11,7 +11,7 @@ vmap("<A-k>", ":m .-2<CR>==")
 vmap("p", '"_dP')
 
 -- chad tree
-nmap('<leader>e', '<cmd>CHADopen<CR>')
+nmap('<leader>e', '<cmd>NvimTreeToggle<CR>')
 
 -- telescope
 nmap('<C-p>', '<cmd>Telescope find_files<cr>')

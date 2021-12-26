@@ -36,7 +36,7 @@ return packer.startup(function(use)
     use { 'nvim-lualine/lualine.nvim' }
 
     -- utilities
-    use { 'ms-jpq/chadtree', branch = 'chad', run = ':CHADdeps' }
+    use { 'kyazdani42/nvim-tree.lua' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'jiangmiao/auto-pairs' }
     use { 'ap/vim-css-color' }

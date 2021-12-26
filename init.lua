@@ -3,7 +3,7 @@ require('local.basics')
 require('local.plugins')
 
 require('local.theme')
-require('local.chadtree')
+require('local.nvimtree')
 require('local.lualine')
 require('local.telescope')
 require('local.lsp')
