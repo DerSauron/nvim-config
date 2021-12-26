@@ -5,7 +5,7 @@ if not ok then
 end
 
 lsp_installer.on_server_ready(function(server)
-    local handlers = require("local.lsp.handlers")
+    local handlers = require("local.lsp.modules.handlers")
 
     local opts = {
         on_attach = handlers.on_attach,
