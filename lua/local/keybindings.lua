@@ -14,8 +14,10 @@ vmap("p", '"_dP')
 nmap('<leader>e', '<cmd>NvimTreeToggle<CR>')
 
 -- telescope
-nmap('<C-p>', '<cmd>Telescope find_files<cr>')
-nmap('<C-h>', '<cmd>Telescope live_grep<cr>')
+nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
+nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
+nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
 
 -- terminal
 tmap('<ESC>', '<C-\\><C-n>')
