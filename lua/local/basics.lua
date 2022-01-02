@@ -28,4 +28,4 @@ vim.opt.tabstop = 4
 -- vim.opt.whichwrap+=<,>,[,]
 
 vim.opt.list = true
-vim.opt.listchars = {tab = '→\\ ', nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨'}
+vim.opt.listchars = {tab = '→ ', nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨'}
