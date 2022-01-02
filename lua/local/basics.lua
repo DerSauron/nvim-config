@@ -11,6 +11,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.title = true
 vim.opt.ttimeoutlen = 0 -- Command timeout
+vim.opt.updatetime = 400
 vim.opt.wildmenu = true -- Auto complete menu
 vim.opt.wrap = false
 vim.opt.hlsearch = true
