@@ -4,11 +4,16 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Move text up and down
-nmap("<A-j>", "<Esc>:m .+1<CR>==gi")
-nmap("<A-k>", "<Esc>:m .-2<CR>==gi")
-vmap("<A-j>", ":m .+1<CR>==")
-vmap("<A-k>", ":m .-2<CR>==")
+nmap("<A-j>", "<cmd>m .+1<CR>==")
+nmap("<A-k>", "<cmd>m .-2<CR>==")
+vmap("<A-j>", "<cmd>m .+1<CR>==gv")
+vmap("<A-k>", "<cmd>m .-2<CR>==gv")
 vmap("p", '"_dP')
+
+-- Visual indent fix
+vmap("<", "<gv")
+vmap(">", ">gv")
+vmap("=", "=gv")
 
 -- chad tree
 nmap('<leader>e', '<cmd>NvimTreeToggle<CR>')
