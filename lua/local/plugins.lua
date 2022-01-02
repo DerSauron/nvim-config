@@ -40,6 +40,7 @@ return packer.startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'jiangmiao/auto-pairs' }
     use { 'ap/vim-css-color' }
+    use { 'tpope/vim-abolish' }
 
     -- telescope
     use { 'nvim-telescope/telescope.nvim' }
