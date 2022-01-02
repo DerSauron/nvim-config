@@ -4,5 +4,9 @@ if not ok then
     return
 end
 
+local handlers = require("local.lsp.handlers")
+
 require("local.lsp.installer")
-require("local.lsp.modules.handlers").setup()
+require("local.lsp.null-ls")
+
+handlers.setup()
