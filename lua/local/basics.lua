@@ -31,3 +31,5 @@ vim.opt.list = true
 vim.opt.listchars = {tab = '→ ', nbsp = '␣', trail = '•', extends = '⟩', precedes = '⟨'}
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+vim.opt.colorcolumn = { 120 }
