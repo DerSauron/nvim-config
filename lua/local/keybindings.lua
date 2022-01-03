@@ -3,6 +3,10 @@ nmap("<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Clipboard
+vmap("<C-A-y>", "\"+y")
+vmap("<C-A-p>", "\"+p")
+
 -- Move text up and down
 nmap("<A-j>", "<cmd>m .+1<CR>==")
 nmap("<A-k>", "<cmd>m .-2<CR>==")
