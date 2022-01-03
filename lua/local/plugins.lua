@@ -63,6 +63,8 @@ return packer.startup(function(use)
     use { 'saadparwaiz1/cmp_luasnip' }
     use { "rafamadriz/friendly-snippets" }
     use { 'ray-x/lsp_signature.nvim' }
+    use { "numToStr/Comment.nvim" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
     -- git
     use { 'lewis6991/gitsigns.nvim' }
