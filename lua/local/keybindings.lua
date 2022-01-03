@@ -12,7 +12,6 @@ nmap("<A-j>", "<cmd>m .+1<CR>==")
 nmap("<A-k>", "<cmd>m .-2<CR>==")
 vmap("<A-j>", "<cmd>m .+1<CR>==gv")
 vmap("<A-k>", "<cmd>m .-2<CR>==gv")
-vmap("p", '"_dP')
 
 -- Visual indent fix
 vmap("<", "<gv")
