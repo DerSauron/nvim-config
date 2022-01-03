@@ -21,4 +21,4 @@ And some others extending the functionality
 
 ## Theme
 
-- dracula
+- [dracula](https://github.com/Mofiqul/dracula.nvim)
