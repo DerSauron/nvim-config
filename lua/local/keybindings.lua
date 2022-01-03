@@ -16,13 +16,13 @@ vmap(">", ">gv")
 vmap("=", "=gv")
 
 -- chad tree
-nmap('<leader>e', '<cmd>NvimTreeToggle<CR>')
+nmap("<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 -- telescope
-nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
-nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
-nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
-nmap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+nmap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nmap("<leader>fg", "<cmd>Telescope live_grep<cr>")
+nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
+nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- terminal
-tmap('<ESC>', '<C-\\><C-n>')
+tmap("<ESC>", "<C-\\><C-n>")

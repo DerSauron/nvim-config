@@ -1,12 +1,12 @@
 -- auto install packer
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = vim.fn.system({
-        'git',
-        'clone',
-        '--depth',
-        '1',
-        'https://github.com/wbthomason/packer.nvim',
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
         install_path
     })
 end
@@ -20,54 +20,54 @@ vim.cmd([[
 ]])
 
 -- plugin definitions
-local ok, packer = pcall(require, 'packer')
+local ok, packer = pcall(require, "packer")
 if not ok then
     return
 end
 
 return packer.startup(function(use)
     -- bare minimum
-    use { 'wbthomason/packer.nvim' }
-    use { 'nvim-lua/plenary.nvim' }
+    use { "wbthomason/packer.nvim" }
+    use { "nvim-lua/plenary.nvim" }
 
     -- decoration
-    use { 'Mofiqul/dracula.nvim'}
-    use { 'kyazdani42/nvim-web-devicons' }
-    use { 'nvim-lualine/lualine.nvim' }
+    use { "Mofiqul/dracula.nvim"}
+    use { "kyazdani42/nvim-web-devicons" }
+    use { "nvim-lualine/lualine.nvim" }
 
     -- utilities
-    use { 'kyazdani42/nvim-tree.lua' }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'jiangmiao/auto-pairs' }
-    use { 'ap/vim-css-color' }
-    use { 'tpope/vim-abolish' }
+    use { "kyazdani42/nvim-tree.lua" }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "jiangmiao/auto-pairs" }
+    use { "ap/vim-css-color" }
+    use { "tpope/vim-abolish" }
 
     -- telescope
-    use { 'nvim-telescope/telescope.nvim' }
-    use { 'nvim-telescope/telescope-fzy-native.nvim' }
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope-fzy-native.nvim" }
 
     -- lsp
-    use { 'neovim/nvim-lspconfig' }
-    use { 'williamboman/nvim-lsp-installer' }
-    use { 'glepnir/lspsaga.nvim' }
+    use { "neovim/nvim-lspconfig" }
+    use { "williamboman/nvim-lsp-installer" }
+    use { "glepnir/lspsaga.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim" }
 
     -- code completion
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/cmp-nvim-lua' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
-    use { 'hrsh7th/cmp-cmdline' }
-    use { 'hrsh7th/nvim-cmp' }
-    use { 'L3MON4D3/LuaSnip' }
-    use { 'saadparwaiz1/cmp_luasnip' }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-nvim-lua" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
+    use { "hrsh7th/cmp-cmdline" }
+    use { "hrsh7th/nvim-cmp" }
+    use { "L3MON4D3/LuaSnip" }
+    use { "saadparwaiz1/cmp_luasnip" }
     use { "rafamadriz/friendly-snippets" }
-    use { 'ray-x/lsp_signature.nvim' }
+    use { "ray-x/lsp_signature.nvim" }
     use { "numToStr/Comment.nvim" }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
     -- git
-    use { 'lewis6991/gitsigns.nvim' }
+    use { "lewis6991/gitsigns.nvim" }
 
     if PACKER_BOOTSTRAP then
         packer.sync()

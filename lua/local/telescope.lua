@@ -4,9 +4,9 @@ if not ok then
     return
 end
 
-local actions = require('telescope.actions')
+local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
-local Job = require('plenary.job')
+local Job = require("plenary.job")
 
 local preview_maker = function(filepath, bufnr, opts)
     opts = opts or {}
@@ -63,4 +63,4 @@ telescope.setup({
     }
 })
 
-telescope.load_extension('fzy_native')
+telescope.load_extension("fzy_native")
