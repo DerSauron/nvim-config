@@ -18,6 +18,10 @@ vmap("<", "<gv")
 vmap(">", ">gv")
 vmap("=", "=gv")
 
+-- commenting
+nmap("<Leader>/", "<Cmd>lua require(\"Comment\").toggle()<CR>")
+vmap("<Leader>/", "<Cmd>lua require(\"Comment.api\").gc(vim.fn.visualmode())")
+
 -- chad tree
 nmap("<leader>e", "<cmd>NvimTreeToggle<CR>")
 
