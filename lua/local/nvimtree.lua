@@ -21,6 +21,8 @@ vim.g.nvim_tree_icons = {
         symlink_open = "",
     }
 }
+vim.g.nvim_tree_group_empty = 1
+vim.g.nvim_tree_create_in_closed_folder = 1
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
