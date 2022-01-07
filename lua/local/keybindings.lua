@@ -10,13 +10,13 @@ vmap("<C-A-p>", "\"+p")
 -- Move text up and down
 nmap("<A-j>", "<Cmd>m .+1<CR>==")
 nmap("<A-k>", "<Cmd>m .-2<CR>==")
-vmap("<A-j>", "<Cmd>m .+1<CR>==gv")
-vmap("<A-k>", "<Cmd>m .-2<CR>==gv")
+xmap("<A-j>", "<Cmd>m .+1<CR>==gv")
+xmap("<A-k>", "<Cmd>m .-2<CR>==gv")
 
 -- Visual indent fix
-vmap("<", "<gv")
-vmap(">", ">gv")
-vmap("=", "=gv")
+xmap("<", "<gv")
+xmap(">", ">gv")
+xmap("=", "=gv")
 
 -- Really delete
 nmap("<Leader>dw", "\"_dw")

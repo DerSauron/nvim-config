@@ -16,6 +16,10 @@ function _G.vmap(lhs, rhs, opts)
     map("v", lhs, rhs, opts)
 end
 
+function _G.xmap(lhs, rhs, opts)
+    map("x", lhs, rhs, opts)
+end
+
 function _G.tmap(lhs, rhs, opts)
     map("t", lhs, rhs, opts)
 end
