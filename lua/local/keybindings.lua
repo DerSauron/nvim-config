@@ -4,8 +4,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Clipboard
-vmap("<C-A-y>", "\"+y")
-vmap("<C-A-p>", "\"+p")
+xmap("<C-A-y>", "\"+y")
+nmap("<C-A-y>", "\"+yy")
+nmap("<C-A-p>", "\"+P")
 
 -- Move text up and down
 nmap("<A-j>", "<Cmd>m .+1<CR>==")
