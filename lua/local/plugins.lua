@@ -39,7 +39,7 @@ return packer.startup(function(use)
     -- utilities
     use { "kyazdani42/nvim-tree.lua" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-    use { "jiangmiao/auto-pairs" }
+    use { "windwp/nvim-autopairs" }
     use { "ap/vim-css-color" }
     use { "tpope/vim-abolish" }
 
