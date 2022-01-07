@@ -22,6 +22,7 @@ vim.cmd([[
 -- plugin definitions
 local ok, packer = pcall(require, "packer")
 if not ok then
+    print("Plugin packer not found")
     return
 end
 
