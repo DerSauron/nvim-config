@@ -18,6 +18,10 @@ vmap("<", "<gv")
 vmap(">", ">gv")
 vmap("=", "=gv")
 
+-- Really delete
+nmap("<Leader>dw", "\"_dw")
+nmap("<Leader>dd", "\"_dd")
+
 -- commenting
 nmap("<Leader>/", "<Cmd>lua require(\"Comment\").toggle()<CR>")
 vmap("<Leader>/", "<Cmd>lua require(\"Comment.api\").gc(vim.fn.visualmode())")
