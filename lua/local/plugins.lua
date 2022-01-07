@@ -22,6 +22,7 @@ vim.cmd([[
 -- plugin definitions
 local ok, packer = pcall(require, "packer")
 if not ok then
+    print("Plugin packer not found")
     return
 end
 
@@ -49,7 +50,6 @@ return packer.startup(function(use)
     -- lsp
     use { "neovim/nvim-lspconfig" }
     use { "williamboman/nvim-lsp-installer" }
-    use { "glepnir/lspsaga.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim" }
 
     -- code completion

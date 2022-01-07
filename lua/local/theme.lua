@@ -5,7 +5,7 @@ vim.cmd([[
         colorscheme ]] .. color_scheme .. [[
 
     catch /^Vim\%((\a\+)\)\=:E185/
-        echo "color scheme ]] .. color_scheme .. [["
+        echo "Color scheme ]] .. color_scheme .. [[ not found"
         colorscheme default
         set background=dark
     endtry

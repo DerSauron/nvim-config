@@ -17,6 +17,7 @@ vim.opt.wrap = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.scrolloff = 4
 vim.opt.ruler = true
 vim.opt.undofile = true; vim.bo.undofile = true
