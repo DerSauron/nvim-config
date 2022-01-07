@@ -24,6 +24,7 @@ vmap("<Leader>/", "<Cmd>lua require(\"Comment.api\").gc(vim.fn.visualmode())")
 
 -- nvim tree
 nmap("<Leader>e", "<Cmd>NvimTreeToggle<CR>")
+nmap("<Leader>fe", "<Cmd>NvimTreeFindFile<CR>")
 
 -- telescope
 nmap("<Leader>ff", "<Cmd>Telescope find_files<CR>")
