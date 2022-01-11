@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Clipboard
-xmap("<C-A-y>", "\"+y")
+xmap("<C-A-y>", "\"+ygv")
 nmap("<C-A-y>", "\"+yy")
 nmap("<C-A-p>", "\"+P")
 
@@ -28,7 +28,7 @@ nmap("<C-_>", "<Cmd>lua require(\"Comment.api\").call(\"toggle_current_linewise_
 xmap("<C-_>", "<Esc><Cmd>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>")
 
 -- nvim tree
-nmap("<Leader>e", "<Cmd>NvimTreeToggle<CR>")
+nmap("<Leader>e", "<Cmd>NvimTreeFocus<CR>")
 nmap("<Leader>fe", "<Cmd>NvimTreeFindFile<CR>")
 
 -- telescope
@@ -39,3 +39,6 @@ nmap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 
 -- terminal
 tmap("<C-x>", "<C-\\><C-n>")
+
+-- helper
+nmap("<Leader>h", "<Cmd>noh<CR>")
