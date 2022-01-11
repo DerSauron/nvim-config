@@ -1,7 +1,8 @@
 -- auto install packer
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = vim.fn.system({
+    print("Installing packer")
+    vim.fn.system({
         "git",
         "clone",
         "--depth",
@@ -24,6 +25,13 @@ local ok, packer = pcall(require, "packer")
 if not ok then
     print("Plugin packer not found")
     return
+end
+
+local initial_sync = function()
+    local plenary_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/plenary.nvim"
+    if vim.fn.empty(vim.fn.glob(plenary_path)) > 0 then
+        packer.sync()
+    end
 end
 
 return packer.startup(function(use)
@@ -69,7 +77,6 @@ return packer.startup(function(use)
     -- git
     use { "lewis6991/gitsigns.nvim" }
 
-    if PACKER_BOOTSTRAP then
-        packer.sync()
-    end
+
+    initial_sync()
 end)
