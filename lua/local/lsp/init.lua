@@ -8,5 +8,6 @@ local handlers = require("local.lsp.handlers")
 
 require("local.lsp.installer")
 require("local.lsp.null-ls")
+require("local.lsp.lspsaga")
 
 handlers.setup()

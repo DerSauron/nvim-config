@@ -61,30 +61,46 @@ local function lsp_highlight_document(client)
     end
 end
 
-local function lsp_keymaps(bufnr)
+local function lsp_keymaps(client, bufnr)
     local set_keymap = vim.api.nvim_buf_set_keymap
 
     local opts = { noremap = true, silent = true }
 
     set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    -- set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>", opts)
-    set_keymap(bufnr, "n", "gl", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'rounded' })<CR>", opts)
-    set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", opts)
-    set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+    -- set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    -- set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    -- set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    -- set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    -- set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>", opts)
+    -- set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", opts)
+    -- set_keymap(bufnr, "n", "gl", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'rounded' })<CR>", opts)
 
-    vim.cmd [[ command! Format execute "lua vim.lsp.buf.formatting()" ]]
+    if client.resolved_capabilities.document_formatting then
+        set_keymap(bufnr, "n", "<C-f>", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    else
+        set_keymap(bufnr, "n", "<C-f>", "<Cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    end
+
+    set_keymap(bufnr, "n", "gh", "<Cmd>lua require('lspsaga.provider').lsp_finder()<CR>", opts)
+    set_keymap(bufnr, "n", "<Leader>ca", "<Cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
+    set_keymap(bufnr, "x", "<Loader>ca", ":<C-u>lua require('lspsaga.codeaction').range_code_action()<CR>", opts)
+    set_keymap(bufnr, "n", "K", "<Cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
+    set_keymap(bufnr, "n", "<C-f>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+    set_keymap(bufnr, "n", "<C-f>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+    set_keymap(bufnr, "n", "<C-k>", "<Cmd>lua require('lspsaga.signatureHelp').signature_help()<CR>", opts)
+    set_keymap(bufnr, "n", "<Leader>rn", "<Cmd>lua require('lspsaga.rename').rename()<CR>", opts)
+    set_keymap(bufnr, "n", "pd", "<Cmd>lua require('lspsaga.provider').preview_definition()<CR>", opts)
+    set_keymap(bufnr, "n", "<Leader>cl", "<Cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", opts)
+    set_keymap(bufnr, "n", "<Leader>cc", "<Cmd>lua require('lspsaga.diagnostic').show_cursor_diagnostic()<CR>", opts)
+    set_keymap(bufnr, "n", "[d", "<Cmd>lua require('lspsaga.diagnostic').navigate('prev')<CR>", opts)
+    set_keymap(bufnr, "n", "]d", "<Cmd>lua require('lspsaga.diagnostic').navigate('next')<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
-    lsp_keymaps(bufnr)
+    lsp_keymaps(client, bufnr)
     lsp_highlight_document(client)
 end
 
