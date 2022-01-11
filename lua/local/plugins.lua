@@ -78,5 +78,11 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim" }
 
 
+    -- load plugins from local environment
+    local lpok, local_plugins = pcall(require, "env.local_plugins")
+    if lpok and type(local_plugins) == "table" then
+        pcall(local_plugins.setup, use)
+    end
+
     initial_sync()
 end)

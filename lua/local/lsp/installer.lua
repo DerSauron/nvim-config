@@ -13,9 +13,14 @@ lsp_installer.on_server_ready(function(server)
         flags = handlers.flags
     }
 
-    local ok, server_opts = pcall(require, "local.lsp.configs." .. server.name)
-    if ok then
+    local ook, server_opts = pcall(require, "local.lsp.configs." .. server.name)
+    if ook then
         opts = vim.tbl_deep_extend("force", server_opts, opts)
+    end
+
+    local eok, env_server_opts = pcall(require, "env.lsp." .. server.name)
+    if eok then
+        opts = vim.tbl_deep_extend("force", env_server_opts, opts)
     end
 
     server:setup(opts)
