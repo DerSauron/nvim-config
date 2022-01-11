@@ -38,4 +38,4 @@ nmap("<Leader>fb", "<Cmd>Telescope buffers<CR>")
 nmap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 
 -- terminal
-tmap("<ESC>", "<C-\\><C-n>")
+tmap("<C-x>", "<C-\\><C-n>")

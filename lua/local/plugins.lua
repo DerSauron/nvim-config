@@ -77,6 +77,8 @@ return packer.startup(function(use)
     -- git
     use { "lewis6991/gitsigns.nvim" }
 
+    -- terminal
+    use { "akinsho/toggleterm.nvim" }
 
     -- load plugins from local environment
     local lpok, local_plugins = pcall(require, "env.local_plugins")
