@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs" }
     use { "ap/vim-css-color" }
     use { "tpope/vim-abolish" }
+    use { "folke/which-key.nvim" }
 
     -- telescope
     use { "nvim-telescope/telescope.nvim" }
