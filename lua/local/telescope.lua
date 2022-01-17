@@ -53,6 +53,13 @@ telescope.setup({
         buffers = {
             sort_mru = true,
             ignore_current_buffer = true,
+        },
+        find_files = {
+            hidden = true,
+            no_ignore = true,
+        },
+        live_grep = {
+            additional_args = function(_) return { "-uu" } end
         }
     },
     extensions = {
