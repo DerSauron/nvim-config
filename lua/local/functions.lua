@@ -33,4 +33,25 @@ function _G.reload_config()
 
   dofile(vim.env.MYVIMRC)
 end
-vim.cmd("command! ReloadConfig lua reload_config()")
+
+function _G.close_all_buffers()
+    local function filter(buffer)
+        local valid = vim.api.nvim_buf_is_valid(buffer)
+            and vim.api.nvim_buf_get_option(buffer, "buflisted")
+        if not valid then return false end
+
+        local exclude_names = { "NvimTree", "toggleterm" }
+        local buffer_name = vim.api.nvim_buf_get_name()
+        for _, n in ipairs(exclude_names) do
+            if string.find(buffer_name, n) then return false end
+        end
+
+        return true
+    end
+
+    local buffers = vim.tbl_filter(filter, vim.api.nvim_list_bufs())
+
+    for _, buffer in ipairs(buffers) do
+        vim.api.nvim_buf_delete(buffer)
+    end
+end
