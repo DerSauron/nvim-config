@@ -75,6 +75,11 @@ return packer.startup(function(use)
     use { "numToStr/Comment.nvim" }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
+    -- debugging
+    use { "mfussenegger/nvim-dap" }
+    use { "theHamsta/nvim-dap-virtual-text" }
+    use { "jbyuki/one-small-step-for-vimkind" }
+
     -- git
     use { "lewis6991/gitsigns.nvim" }
 
