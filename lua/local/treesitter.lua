@@ -14,7 +14,7 @@ config.setup({
         additional_vim_regex_highlight = true,
     },
     indent = {
-        enable = true,
+        enable = false,
         disable = {},
     },
     autopairs = {

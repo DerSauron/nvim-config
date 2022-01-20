@@ -34,3 +34,5 @@ vim.opt.listchars = {tab = "→ ", nbsp = "␣", trail = "•", extends = "⟩",
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.opt.colorcolumn = { 120 }
+
+vim.cmd [[ filetype plugin indent on ]]
