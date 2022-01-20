@@ -24,8 +24,8 @@ nmap("<Leader>dw", "\"_dw")
 nmap("<Leader>dd", "\"_dd")
 
 -- commenting
-nmap("<C-_>", "<Cmd>lua require(\"Comment.api\").call(\"toggle_current_linewise_op\")<CR>g@$")
-xmap("<C-_>", "<Esc><Cmd>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>")
+nmap("<C-_>", "<Cmd>lua require('Comment.api').call('toggle_current_linewise_op')<CR>g@$")
+xmap("<C-_>", "<Esc><Cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>")
 
 -- nvim tree
 nmap("<Leader>e", "<Cmd>NvimTreeFocus<CR>")
