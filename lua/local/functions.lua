@@ -25,13 +25,13 @@ function _G.tmap(lhs, rhs, opts)
 end
 
 function _G.reload_config()
-  for name,_ in pairs(package.loaded) do
-    if name:match("^cnull") then
-      package.loaded[name] = nil
+    for name,_ in pairs(package.loaded) do
+        if name:match("^local%.") then
+            package.loaded[name] = nil
+        end
     end
-  end
-
-  dofile(vim.env.MYVIMRC)
+    dofile(vim.env.MYVIMRC)
+    print("Config reloaded")
 end
 
 function _G.close_all_buffers()
