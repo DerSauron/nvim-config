@@ -38,7 +38,10 @@ nmap("<Leader>fb", "<Cmd>Telescope buffers<CR>")
 nmap("<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 
 -- terminal
+nmap("<A-\\>", "<Cmd>lua toggle_term_direction()<CR>")
+tmap("<A-\\>", "<Cmd>lua toggle_term_direction()<CR>")
 tmap("<C-x>", "<C-\\><C-n>")
+tmap("<C-w><C-w>", "<C-\\><C-n><C-w><C-w>")
 
 -- helper
 nmap("<Leader>h", "<Cmd>noh<CR>")

@@ -16,7 +16,7 @@ toggleterm.setup({
 })
 
 local Path = require("plenary.path")
-local Terminal = require("toggleterm.terminal").Terminal
+local terms = require("toggleterm.terminal")
 
 local function find_closest_git_dir()
     local current_file = vim.api.nvim_buf_get_name(0)
@@ -39,8 +39,31 @@ function _G.toggle_gitui()
 
     local cmd = "gitui -d " .. git_dir .. " -w " .. git_dir
     print(cmd)
-    local gitui_term = Terminal:new({cmd = cmd, hidden = true})
+    local gitui_term = terms.Terminal:new({
+        cmd = cmd,
+        hidden = true,
+        dir = git_dir,
+        close_on_exit = true,
+        direction = "float",
+    })
     gitui_term:toggle()
+end
+
+function _G.toggle_term_direction()
+    local term_num = terms.get_toggled_id()
+    if not term_num then return end
+
+    local term = terms.get(term_num)
+    if not term or not term:is_open() then return end
+
+    local direction
+    if term:is_float() then
+        direction = "horizontal"
+    else
+        direction = "float"
+    end
+    term:close()
+    term:open(nil, direction)
 end
 
 vim.cmd("command! Git lua toggle_gitui()")
