@@ -20,7 +20,7 @@ local preview_maker = function(filepath, bufnr, opts)
             if mime_type == "text" then
                 vim.loop.fs_stat(filepath, function(_, stat)
                     if not stat then return end
-                    if stat.size > 100000 then
+                    if stat.size > 131072 then
                         vim.schedule(function()
                             vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "FILE TOO LARGE" })
                         end)
